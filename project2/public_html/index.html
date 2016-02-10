@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title>project 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+     <center>   
+        <button onclick='t1()' class="btn btn-success" id="r1" data-toggle="modal" data-target="#myModal"> BUTTON 1 </button><br><br>
+        <button onclick='t6()' class="btn btn-success" id="r2" data-toggle="modal" data-target="#myModal"> BUTTON 2 </button><br><br>
+        <button onclick='t3()' class="btn btn-success" id="r3" data-toggle="modal" data-target="#myModal"> BUTTON 3 </button><br><br>
+        <button onclick='t4()' class="btn btn-success" id="r4" data-toggle="modal" data-target="#myModal"> BUTTON 4 </button><br><br>
+        <button onclick='t5()' class="btn btn-success" id="r5" data-toggle="modal" data-target="#myModal"> BUTTON 5 </button><br><br>
+     </center>  
+        
+     <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">DATA FETCH FROM JSON FILE</h4>
+      </div>
+      <div class="modal-body">
+       <div class="row">
+           <div class="col-md-3">
+               
+               FIRST NAME
+           </div>
+           <div class="col-md-3">
+               LAST NAME
+           </div>
+            <div class="col-md-3">
+               
+               EMPLOYEE
+           </div>
+           <div class="col-md-3">
+               SPECIALIZATION
+           </div>
+      </div>
+          <hr>
+       <div class="row">
+           <div class="col-md-3">
+               <div id="modata">
+                   
+               </div>
+               
+           </div>
+           <div class="col-md-3">
+                <div id="modata1">
+                   
+               </div>
+           </div>
+           <div class="col-md-3">
+               <div id="modata2">
+                   
+               </div>
+               
+           </div>
+           <div class="col-md-3">
+                <div id="modata3">
+                   
+               </div>
+           </div>
+          
+      </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <script type="text/javascript">
+        
+           var arr=[];
+            var arr1=[];
+            var arr2=[];
+            var arr3=[];
+            $.getJSON('data.json',function(obj)
+            { 
+                console.log(obj);
+                for(i in obj.employees)
+                {
+                     arr.push(obj.employees[i].firstName);
+                     arr1.push(obj.employees[i].lastName);
+                     arr2.push(obj.employees[i].id);
+                     arr3.push(obj.employees[i].specialization);
+                }
+               
+            
+                //              document.getElementById('t1').value=val;
+                $('#t1').val(valu);
+            });
+            $('#t2').autocomplete({
+                        source : arr, 
+                    //    source1 : arr1
+                    })
+                    
+                    
+                    
+                function t1() {
+                 
+                 
+                  $("#modata").html(arr[0]);
+                  $("#modata1").html(arr1[0]);
+                  $("#modata2").html(arr2[0]);
+                  $("#modata3").html(arr3[0]);
+              
+                }
+
+              function t6() {
+                   
+                 
+                 $("#modata").html(arr[1]);
+                  $("#modata1").html(arr1[1]);
+                  $("#modata2").html(arr2[1]);
+                  $("#modata3").html(arr3[1]);
+                }
+                
+                  function t3() {
+                   
+             
+                 $("#modata").html(arr[2]);
+                  $("#modata1").html(arr1[2]);
+                  $("#modata2").html(arr2[2]);
+                  $("#modata3").html(arr3[2]);
+                   
+                  
+                }
+
+                 function t4() {
+                   
+                 
+                  $("#modata").html(arr[3]);
+                  $("#modata1").html(arr1[3]);
+                  $("#modata2").html(arr2[3]);
+                  $("#modata3").html(arr3[3]);
+                }
+                 function t5() {
+                   
+                   
+                  $("#modata").html(arr[4]);
+                  $("#modata1").html(arr1[4]);
+                  $("#modata2").html(arr2[4]);
+                  $("#modata3").html(arr3[4]);
+                     
+                }
+        
+        
+        
+        
+    
+            
+            
+            
+     </script>
+        
+    </body>
+ </html>

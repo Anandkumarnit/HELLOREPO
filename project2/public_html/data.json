@@ -1,0 +1,14 @@
+{ 
+    "employees" :
+                [
+                    { "firstName":"Anand" , "lastName":"Kumar","id":"01","specialization":"JAVA"},
+                    { "firstName":"Vinay" , "lastName":"kumar","id":"02" ,"specialization":"PHP"},
+                    { "firstName":"Yash" , "lastName":"kumar","id":"03","specialization":"JAVA" },
+                    { "firstName":"Sachin" , "lastName":"kumar","id":"04","specialization":".NET" },
+                    { "firstName":"Pushpendra" , "lastName":"kumar","id":"05","specialization":"Android" }
+                ]
+                
+     
+             
+         
+}
